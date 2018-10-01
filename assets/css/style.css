@@ -1,0 +1,17 @@
+html{
+    background-color: beige;
+}
+#buttonCol{
+    background-color: gray;
+}
+#gifCol{
+    background-color: gray;
+    float:left;
+}
+#inputCol{
+    background-color: blue;
+}
+.wifeImage{
+    float:left;
+    padding: 10px;
+}
