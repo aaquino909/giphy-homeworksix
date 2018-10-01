@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var housewives = ["NeNe leaks", "Kenya Moore"];
+  var housewives = ["NeNe leaks", "Kenya Moore", "Kandi Burruss", "Cynthia Bailey", "Porsha Williams", "Phaedra Parks", "Sheree Whitfield", "Ashley Darby", "Karen Huger", "Gizelle Bryant", "Lisa Vanderpump", "Kyle Richards", "Lisa Rinna", "Erika Jayne"];
 
   //function to render buttons from array
   function renderButtons() {
@@ -15,7 +15,9 @@ $(document).ready(function () {
   renderButtons();
 
   //eventlistener for buttons
-  $("button").on("click", function () {
+  $(document).on('click', 'button', function(){
+
+  // $("button").on("click", function () {
     $("#gifCol").empty();
     var person = $(this).attr("data-name");
 
@@ -24,7 +26,6 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-      console.log(response);
       var results = response.data;
 
       for (var i = 0; i < results.length; i++) {
@@ -34,10 +35,9 @@ $(document).ready(function () {
           var rating = results[i].rating;
           var p = $("<p>").text("Rating: " + rating);
           var personImage = $("<img>");
-          personImage.attr("src", results[i].images.fixed_height_small_still.url);
-          personImage.attr("data-still", results[i].images.fixed_height_small_still.url);
-          personImage.attr("data-animate", results[i].images.fixed_height_small.url);
-          console.log(personImage);
+          personImage.attr("src", results[i].images.fixed_height_still.url);
+          personImage.attr("data-still", results[i].images.fixed_height_still.url);
+          personImage.attr("data-animate", results[i].images.fixed_height.url);
           personImage.attr("data-state", "still");
           personImage.attr('id', 'gif');
 
@@ -59,6 +59,15 @@ $(document).ready(function () {
       $(this).attr("src", $(this).attr("data-still"));
       $(this).attr("data-state", "still");
     }
+  });
+  $(document).on('click', '#add-housewife', function(event){
+    event.preventDefault();
+    var newHousewife = $("#housewife-input").val().trim();
+    housewives.push(newHousewife);
+    renderButtons();
+
+
+
   });
 
 
