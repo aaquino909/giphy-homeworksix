@@ -10,10 +10,10 @@ Workflow for assignment
         - display on the page with 10 limits
         
 6. create still and active function when clicking a gif CHECK!
-7. use input.val to push item in array
-7. calls the function to make it a button and pull gifs
+7. use input.val to push item in array CHECK!
+7. calls the function to make it a button and pull gifs CHECK!
 
-Note to self, do only two buttons for now 
+Note to self, do only two buttons for now CHECK!
 
 uclagiphy
 Api Key:
