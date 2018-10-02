@@ -1,54 +1,59 @@
-@font-face {
-    font-family: "beloved";
-    src: url("/Users/cnyokoyama/Desktop/angelo/beloved.ttf");
+
+ body{
+    background: url("/Users/angeloaquino/projects/giphy-homeworksix/assets/images/background.jpg");
+    width: auto;
  }
- html {
-    background: url("/Users/cnyokoyama/Desktop/angelo/background.jpg");
+ header{
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Sonsie One';
  }
  
- #buttonCol{
-    background-color: black;
+ p{
+    color: gray;
+    font-size: 15px;
+    text-align: right;
+    font-family: 'Sonsie One', cursive;
  }
- #gifCol{
-    background: url("/Users/cnyokoyama/Desktop/angelo/background.jpg");
-    float:left;
- }
- #inputCol{
-    background-color: black;
- }
+
+
+
  .wifeImage{
     float:left;
     padding: 10px;
     font-size: 30px;
+    cursor: pointer;
  }
  
  #housewife-form {
-    color: white;
-    font-size: 50px;
+    color:white;
+    font-size: 30px;
     text-align: center;
-    font-family: beloved;
- }
+    font-family: 'Sonsie One', cursive;
+}
  
  #add-housewife {
-    color: black;
-    font-size: 30px;
-    background-color: rgb(198, 177, 21);
+    color: rgb(147, 59, 147);
+    font-size: 15px;
+    background-color: white(198, 177, 21);
     border: white 2px dashed;
+    cursor: pointer;
  }
  
  #gifCol {
     color: black;
-    font-family: beloved;
-    font-size: 80px;
+    font-family: 'Sonsie One', cursive;
     text-align: center;
  }
  
  .wife {
-    font-family: beloved;
+    font-family: 'Luckiest Guy', cursive;
     font-size: 24px;
-    background-color: black;
-    color: rgb(198, 177, 21);
-    border: white solid 5px;
+    background-color: transparent;
+    color: rgb(255, 225, 0);
+    border: transparent solid 5px;
+    cursor: pointer;
  }
  
  .col-md-12 {
@@ -56,5 +61,8 @@
  }
  
  #housewife-input {
-    font-size: 50px;
+    font-size: 20px;
+ }
+ img{
+    cursor: pointer;
  }
