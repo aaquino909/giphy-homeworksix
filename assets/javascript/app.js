@@ -65,6 +65,7 @@ $(document).ready(function () {
     var newHousewife = $("#housewife-input").val().trim();
     housewives.push(newHousewife);
     renderButtons();
+    $("#housewife-input").closest('form').find("input[type=text], textarea").val(""); //empties input field when button is pressed
 
 
 
