@@ -1,6 +1,6 @@
 
  body{
-    background: url("/Users/angeloaquino/projects/giphy-homeworksix/assets/images/background.jpg");
+    background: url("../images/background.jpg");
     width: auto;
  }
  header{
