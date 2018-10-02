@@ -1,18 +1,60 @@
-html{
-    
-    background-color: beige;
-}
-#buttonCol{
-    background-color: gray;
-}
-#gifCol{
-    background-color: gray;
+@font-face {
+    font-family: "beloved";
+    src: url("/Users/cnyokoyama/Desktop/angelo/beloved.ttf");
+ }
+ html {
+    background: url("/Users/cnyokoyama/Desktop/angelo/background.jpg");
+ }
+ 
+ #buttonCol{
+    background-color: black;
+ }
+ #gifCol{
+    background: url("/Users/cnyokoyama/Desktop/angelo/background.jpg");
     float:left;
-}
-#inputCol{
-    background-color: blue;
-}
-.wifeImage{
+ }
+ #inputCol{
+    background-color: black;
+ }
+ .wifeImage{
     float:left;
     padding: 10px;
-}
+    font-size: 30px;
+ }
+ 
+ #housewife-form {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    font-family: beloved;
+ }
+ 
+ #add-housewife {
+    color: black;
+    font-size: 30px;
+    background-color: rgb(198, 177, 21);
+    border: white 2px dashed;
+ }
+ 
+ #gifCol {
+    color: black;
+    font-family: beloved;
+    font-size: 80px;
+    text-align: center;
+ }
+ 
+ .wife {
+    font-family: beloved;
+    font-size: 24px;
+    background-color: black;
+    color: rgb(198, 177, 21);
+    border: white solid 5px;
+ }
+ 
+ .col-md-12 {
+    text-align: center;
+ }
+ 
+ #housewife-input {
+    font-size: 50px;
+ }
