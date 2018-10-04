@@ -68,7 +68,9 @@ p{
  .col-md-12 {
     text-align: center;
  }
- 
+ .boxer{
+    border: white double 8px; 
+}
  #housewife-input {
     font-size: 20px;
  }

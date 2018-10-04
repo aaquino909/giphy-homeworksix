@@ -15,31 +15,6 @@ $(document).ready(function () {
   }
   renderButtons();
 
-  //10 more 
-  //input button for 10 more
-  //create onclick event using everything but empty();
-
-
-  //FAVROTIES section
-  //add a button to each picture
-  //$<button> add a class 
-  //pull the img src and add it to the button (event listener)
-  //var Vsrc=$picture.attrSRC
-  //<button>.attr src, vrc
-  //push src to array "favorites"
-  //outside the foorlop declare array
-  //src to favorite array - for later in case local storage
-  //favorite = push (Vsrc)
-
-  //display array in thumbnail column
-  //event lister is add the src to the div that i created inside the thumbnail columnt
-  //append the div
-
-  //store in local storage
-  //window on load (google)
-  //function to display items in array from local storage
-
-
   //eventlistener for buttons
   $(document).on('click', '.wife', function () {
 
@@ -107,39 +82,61 @@ $(document).ready(function () {
 
   $(document).on('click', '.saveBtn', function () {
     var srcLink = $(this).attr("src"); // pull src from saveBtn and assign to an img to
-    array.push(srcLink);
+    array.push(srcLink); //stores the clicked images into array
     console.log(array);
     var faveImg = $("<img>"); //create a new img element and assign it to faveImg
     faveImg.addClass("favorite"); //add class favorite
     faveImg.attr("src", srcLink); //push the srcLink to src attribute 
     $("#favoritesCol").prepend(faveImg);
+
     localStorage.setItem("savedHousewives", JSON.stringify(array)); //stores array into localStorage
-
-
   });
 
   console.log(array);
   // localStorage.setItem("savedHousewives", JSON.stringify(array));
 
   //function to display array from local storage
-    var retrievedData = JSON.parse(localStorage.getItem("savedHousewives"));
-    console.log(retrievedData);
-    for (var i = 0; i < retrievedData.length; i++ ){
-      var newImage = $("<img>");
-      newImage.addClass("favorite");
-      newImage.attr("src", retrievedData[i]);
-      $("#favoritesCol").prepend(newImage);
+  retrievedData = JSON.parse(localStorage.getItem("savedHousewives"));
+  console.log(retrievedData);
+  for (var i = 0; i < retrievedData.length; i++) { //running into an issue where retrievedData is returning a null when nothing is in local Storage 
+    var newImage = $("<img>");
+    newImage.addClass("favorite");
+    newImage.attr("src", retrievedData[i]);
+    $("#favoritesCol").prepend(newImage);
 
-    }
-  
-    $(document).on('click','#clearStorage', function(){
-      $("#favoritesCol").empty();
-      localStorage.clear();
-
-    })
+  }
+  //function for button that clears the saved images
+  $(document).on('click', '#clearStorage', function (event) { //i can only empty favorites when something is in localStorage
+    event.preventDefault();
+    $("#favoritesCol").empty();
+  })
 
 
 });//documentreadyFunction
+
+  //10 more 
+  //input button for 10 more
+  //create onclick event using everything but empty();
+
+
+  //FAVROTIES section
+  //add a button to each picture
+  //$<button> add a class 
+  //pull the img src and add it to the button (event listener)
+  //var Vsrc=$picture.attrSRC
+  //<button>.attr src, vrc
+  //push src to array "favorites"
+  //outside the foorlop declare array
+  //src to favorite array - for later in case local storage
+  //favorite = push (Vsrc)
+
+  //display array in thumbnail column
+  //event lister is add the src to the div that i created inside the thumbnail columnt
+  //append the div
+
+  //store in local storage
+  //window on load (google)
+  //function to display items in array from local storage
 
 
 
