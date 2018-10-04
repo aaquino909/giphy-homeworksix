@@ -1,5 +1,15 @@
 # giphy-homeworksix
 
+completed two bonuses: 
+-option to display 10 more gifs
+-options to save favorite gifs
+  -store it in localStorage and display when page is refreshed
+
+need to debug: 
+the 10 extra images are the same 10 images first displayed, giphy didn't have a randomater, so i blame their API
+when localStorage is empty, my empty favorites button doesn't function as expected. I get an error of null but as long as something is in localStorage the app works as expected. 
+
+
 Workflow for assignment
 1. create boostrap layout CHECK!
 2. create array (real housewives) CHECK!

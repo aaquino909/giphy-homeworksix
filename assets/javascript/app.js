@@ -15,11 +15,21 @@ $(document).ready(function () {
   }
   renderButtons();
 
+
+
+
   //eventlistener for buttons
   $(document).on('click', '.wife', function () {
+    $("#gifCol").empty();
+
+    //create a button with the function of querying 10 more
+    var tenMore = $("<button>");
+    tenMore.addClass("tenMore");
+    tenMore.attr("data-name", $(this).attr("data-name"))
+    tenMore.text("10+");
+    $(".ten").html(tenMore);
 
     // $("button").on("click", function () {
-    $("#gifCol").empty();
     var person = $(this).attr("data-name");
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=XXa3vkfF45jjJDFAgDVYJWRRoUMI9uSm&q=" + person + "&limit=10"
@@ -55,6 +65,44 @@ $(document).ready(function () {
     }); //ajax
   }); //onclick
 
+  $(document).on('click', '.tenMore', function () {
+    var person = $(".tenMore").attr("data-name");
+    console.log(person);
+
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=XXa3vkfF45jjJDFAgDVYJWRRoUMI9uSm&q=" + person + "&limit=10"
+    $.ajax({  //built into Jquery 
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      var results = response.data;
+
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].rating !== "r") {
+          var gifDiv = $("<div>");
+          gifDiv.addClass("wifeImage")
+          var rating = results[i].rating;
+          var p = $("<p>").text("Rating: " + rating);
+          var personImage = $("<img>");
+          personImage.attr("src", results[i].images.fixed_height_still.url);
+          personImage.attr("data-still", results[i].images.fixed_height_still.url);
+          personImage.attr("data-animate", results[i].images.fixed_height.url);
+          personImage.attr("data-state", "still");
+          personImage.attr('id', 'gif');
+          //create button with src animate attribute
+          var save = $("<button>");
+          save.addClass("saveBtn");
+          save.text("save");
+          save.attr("src", results[i].images.fixed_height_small.url);
+          gifDiv.append(personImage);
+          gifDiv.append(save);
+          gifDiv.append(p);
+          $("#gifCol").prepend(gifDiv);
+        }  //if
+      } //for
+    }); //ajax
+
+
+  });
 
 
 
@@ -109,6 +157,7 @@ $(document).ready(function () {
   $(document).on('click', '#clearStorage', function (event) { //i can only empty favorites when something is in localStorage
     event.preventDefault();
     $("#favoritesCol").empty();
+    localStorage.clear();
   })
 
 

@@ -10,6 +10,10 @@
     font-family: 'Sonsie One';
  }
  
+ .wrapper{
+    padding-left: 4%;
+    padding-right:4%;
+ }
  p{
     color: gray;
     font-size: 15px;
@@ -64,7 +68,11 @@ p{
     border: transparent solid 5px;
     cursor: pointer;
  }
- 
+ .ten{
+    padding: 20px;   
+    font-family: 'Luckiest Guy', cursive;
+
+ }
  .col-md-12 {
     text-align: center;
  }
