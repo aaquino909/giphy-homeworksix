@@ -16,8 +16,17 @@
     text-align: right;
     font-family: 'Sonsie One', cursive;
  }
-
-
+.saveBtn{
+    font-size: 12px;
+    background-color: transparent;
+    color: white;
+    display: flex;
+}
+p{
+    float: left;
+    font-size: 12px;
+    color: white;
+}
 
  .wifeImage{
     float:left;
@@ -65,4 +74,19 @@
  }
  img{
     cursor: pointer;
+ }
+ .favorite{
+     padding: 10px;
+ }
+ .text{
+     padding-top: 20px;
+     font-size: 30px;
+     color: rgb(255, 225, 0);
+     text-align: center;
+     font-family: 'Luckiest Guy', cursive;
+
+ }
+ #clearStorage{
+     text-align: center;
+     font-size: 12px;
  }

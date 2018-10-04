@@ -13,17 +13,26 @@
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Sonsie+One" rel="stylesheet">
+
 <body>
     <!-- <div class="container"> -->
     <div class="row">
         <div class="col-md-12">
-            <header>The Real Housewives</header> 
+            <header>The Real Housewives</header>
         </div>
         <!--col-->
     </div>
     <div id="buttonRow" class="row">
-        <div id="buttonCol" class="col-md-12">
-            buttons
+        <div id="buttonCol" class="col-md-8">
+        </div>
+        <div id="inputCol" class="col-md-4">
+            <form id="housewife-form">
+                <label for="housewife-input">Add Your Favorite Housewife</label>
+                <br>
+                <input type="text" id="housewife-input">
+                <br>
+                <input id="add-housewife" type="submit" value="Add another Queen">
+            </form>
         </div>
         <!--col-->
     </div>
@@ -33,14 +42,11 @@
         <div id="gifCol" class="col-md-8">
         </div>
         <!--col-->
-        <div id="inputCol" class="col-md-4">
-            <form id="housewife-form">
-                <label for="housewife-input">Add Your Favorite Housewife</label>
-                <br>
-                <input type="text" id="housewife-input">
-                <br>
-                <input id="add-housewife" type="submit" value="Add another Queen">
-            </form>
+        <div class="col-md-4">
+            <div class="text"> FAVORITE GIFS <br>
+                <button id="clearStorage"> empty favorites </button> </div>
+
+            <div id="favoritesCol"></div>
         </div>
         <!--col-->
     </div>
