@@ -142,10 +142,12 @@ $(document).ready(function () {
 
   console.log(array);
   // localStorage.setItem("savedHousewives", JSON.stringify(array));
-
-  //function to display array from local storage
   retrievedData = JSON.parse(localStorage.getItem("savedHousewives"));
+
+  if (retrievedData){
+  //function to display array from local storage
   console.log(retrievedData);
+
   for (var i = 0; i < retrievedData.length; i++) { //running into an issue where retrievedData is returning a null when nothing is in local Storage 
     var newImage = $("<img>");
     newImage.addClass("favorite");
@@ -153,6 +155,7 @@ $(document).ready(function () {
     $("#favoritesCol").prepend(newImage);
 
   }
+}
   //function for button that clears the saved images
   $(document).on('click', '#clearStorage', function (event) { //i can only empty favorites when something is in localStorage
     event.preventDefault();
